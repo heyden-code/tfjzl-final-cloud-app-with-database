@@ -141,9 +141,9 @@ def extract_answers(request):
         # Calculate the total score
 def show_exam_result(request, course_id, submission_id):
     context = {}
-    course = get_object_or_404(Course, pk=course_)
-
-submchoices = submission.choices.all()
+    course = get_object_or_404(Course, pk=course_id)
+    submission = Submission.objects.get(id=submission_id)
+    choices = submission.choices.all()
 
     total_score = 0
     questions = course.question_set.all()
@@ -160,7 +160,3 @@ submchoices = submission.choices.all()
     context['choices'] = choices
 
     return render(request, 'onlinecourse/exam_result_bootstrap.html', context)
-ission_id
-    get()id=subobjects.getobje. Submission    submission_idsub=, pkSubSubmission()nsubmission = geget_object_or_404    submissio
-
-
